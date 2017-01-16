@@ -1,0 +1,2 @@
+class PongGame extends Game {
+}
