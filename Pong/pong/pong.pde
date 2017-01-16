@@ -16,6 +16,5 @@ void keyReleased() {
 }
 
 void draw() {
-  pong.update();
   pong.draw();
 }

@@ -3,7 +3,7 @@ import java.awt.Rectangle;
 class GameObject {
   Game game = null;
   protected long _lastMillis = 0;
-  protected PGraphics graphics;
+  protected PGraphics graphics = null;
   protected int _width = 50, _height = 50;
   
   public int x = 0, y = 0;

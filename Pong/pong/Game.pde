@@ -13,11 +13,7 @@ class Game {
   }
   
   void add(GameObject o) {
-    o.game = this;
-    if (o.graphics == null) {
-      o.graphics = createGraphics(o._width, o._height);
-      o.draw();
-    }
+    o.game = this; 
     _objects.add(o);
   }
   
@@ -58,12 +54,17 @@ class Game {
       for (GameObject o : _objects) {
         o.update();
       }
+      
+      this.update();
+      
       for (GameObject o : _objects) {
         pushMatrix();
         translate(o.x, o.y);
-        if (o.graphics != null) {
-          _applet.image(o.graphics, 0, 0);
+        if (o.graphics == null) {
+          o.graphics = createGraphics(o._width, o._height);
+          o.draw();
         }
+        _applet.image(o.graphics, 0, 0);
         popMatrix();
       }
     }
