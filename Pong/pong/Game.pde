@@ -1,8 +1,11 @@
-class Game {
+abstract class Game {
   protected PApplet _applet;
   protected long _millis = 0;
   protected int frames = 0;
   
+  /**
+   * The background color of the game window
+   */
   public color bgcolor = color(55);
   
   ArrayList<GameObject> _objects = new ArrayList<GameObject>();
@@ -12,12 +15,18 @@ class Game {
     this._applet = applet;
   }
   
-  void add(GameObject o) {
+  /**
+   * Adds a GameObject to this Game
+   */
+  public void add(GameObject o) {
     o.game = this; 
     _objects.add(o);
   }
   
-  void remove(GameObject o) {
+  /**
+   * Removes a GameObject from this Game
+   */
+  public void remove(GameObject o) {
     o.game = null;
     _objects.remove(o);
   }
@@ -33,16 +42,27 @@ class Game {
     }
   }
   
-  boolean isKeyPressed(int keyCode) {
+  /**
+   * Returns true if the current keyCode is being pressed down
+   */
+  public boolean isKeyPressed(int keyCode) {
     return _keyVector.containsKey(keyCode);
   }
   
-  boolean isKeyPressed(char key) {
+  /**
+   * Returns true if the current character is being pressed down. 
+   * @param   key    a lowerchase char
+   */
+  public boolean isKeyPressed(char key) {
     return _keyVector.containsKey(Character.getNumericValue(key));
   }
   
-  void update() {
-  }
+  /**
+   * Implement this method so that the Game does something once every
+   * frame. The game runs at a maximum of 30 frames per second. Game Objects
+   * will update, then the game will update, then everything will be drawn.
+   */
+  protected abstract void update();
   
   void draw() {
     long current = millis();
