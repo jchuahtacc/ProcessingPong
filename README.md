@@ -15,3 +15,5 @@ If you want to see what was done in a previous stage, view the commit history fo
 ### Branches (stages)
 
 - [Stage 1: The Base Project](https://github.com/jchuahtacc/ProcessingPong/tree/stage-1-base-project)
+- [Stage 2: Planning](https://github.com/jchuahtacc/ProcessingPong/tree/stage-2-planning)
+- [Stage 3: Ball](https://github.com/jchuahtacc/ProcessingPong/tree/stage-3-ball)
